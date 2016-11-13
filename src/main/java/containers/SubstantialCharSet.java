@@ -17,6 +17,7 @@ public class SubstantialCharSet implements CharSet{
     final private EncodedFactory mEncodedFactory;
     final private short mEncodedLength;
     final private Map<Character, SubstantialChar> mEncodingCharSet = new HashMap<>();
+    final private Map<String, SubstantialChar> mDecodingCharSet = new HashMap<>();
 
     public SubstantialCharSet(){
         this(DEFAULT_ENCODED_LENGTH, DEFAULT_ENCODING_CHAR_SET);
@@ -36,7 +37,9 @@ public class SubstantialCharSet implements CharSet{
     }
 
     public void addChar(Character aChar){
-        mEncodingCharSet.put(aChar, new SubstantialChar(aChar, mEncodedLength, mEncodedFactory));
+        SubstantialChar sc = new SubstantialChar(aChar, mEncodedLength, mEncodedFactory);
+        mEncodingCharSet.put(aChar, sc);
+        mDecodingCharSet.put(sc.getEncoded(), sc);
     }
 
     public String getEncoded(Character aChar){
@@ -44,7 +47,6 @@ public class SubstantialCharSet implements CharSet{
     }
 
     public Character getDecoded(String aEncoded){
-        // TODO
-        return null;
+        return mDecodingCharSet.get(aEncoded).getDecoded();
     }
 }
