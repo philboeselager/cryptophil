@@ -14,7 +14,7 @@ public class SubstantialChar implements CryptoChar{
 
     public SubstantialChar(char aReal, short aEncodedLength, EncodedFactory aEncodedFactory){
         mReal = aReal;
-        mEncoded = aEncodedFactory.getNewEncoded(aEncodedLength);
+        mEncoded = aEncodedFactory.getNewEncoded(aEncodedLength, this);
     }
 
     public void incrementCount(){
