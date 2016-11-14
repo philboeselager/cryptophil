@@ -1,4 +1,5 @@
-import containers.SubstantialCharSet;
+package containers;
+
 import helpers.FileHelpers;
 import org.junit.Assert;
 import org.junit.BeforeClass;

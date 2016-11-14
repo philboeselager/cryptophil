@@ -49,4 +49,8 @@ public class SubstantialCharSet implements CharSet{
     public Character getDecoded(String aEncoded){
         return mDecodingCharSet.get(aEncoded).getDecoded();
     }
+
+    public short getEncodedLength() {
+        return mEncodedLength;
+    }
 }
