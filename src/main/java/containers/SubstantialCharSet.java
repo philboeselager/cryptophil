@@ -42,10 +42,12 @@ public class SubstantialCharSet implements CharSet{
         mDecodingCharSet.put(sc.getEncoded(), sc);
     }
 
+    @Override
     public String getEncoded(Character aChar){
         return mEncodingCharSet.get(aChar).getEncoded();
     }
 
+    @Override
     public Character getDecoded(String aEncoded){
         return mDecodingCharSet.get(aEncoded).getDecoded();
     }
