@@ -25,10 +25,12 @@ public class SubstantialChar implements CryptoChar{
         return mCount;
     }
 
+    @Override
     public String getEncoded(){
         return mEncoded;
     }
 
+    @Override
     public Character getDecoded(){
         return mDecoded;
     }
