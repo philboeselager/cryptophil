@@ -26,4 +26,10 @@ public class EncryptorSettings {
     public short getEncodingLength() {
         return mEncodingLength;
     }
+
+    public void setEncodingLength(final short aLength){
+        if (aLength < 3){
+            throw new IllegalArgumentException("EncryptorSettings.mEncodingLength must be 3 or greater.");
+        }
+    }
 }

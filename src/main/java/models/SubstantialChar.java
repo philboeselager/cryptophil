@@ -17,21 +17,18 @@ public class SubstantialChar implements CryptoChar{
         mEncoded = aEncodedFactory.getNewEncoded(aEncodedLength, this);
     }
 
-    public void incrementCount(){
-        mCount++;
-    }
-
     public long getCount(){
         return mCount;
     }
 
     @Override
-    public String getEncoded(){
+    public String encode(){
+        mCount++;
         return mEncoded;
     }
 
     @Override
-    public Character getDecoded(){
+    public Character decode(){
         return mDecoded;
     }
 }

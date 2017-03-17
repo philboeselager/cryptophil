@@ -5,4 +5,19 @@ package containers;
  */
 public class CharSetInferer {
 
+    public FakeCharSet inferFakeCharSetFromSubstantialCharSet(
+            SubstantialCharSet aSubstantialCharSet){
+        return null;
+    }
+
+    public SwitchToFakeCharSet inferSwitchToFakeCharSetFromSubstantialCharSet(
+            SubstantialCharSet aSubstantialCharSet){
+        return null;
+    }
+
+    public SwitchToSubstantialCharSet inferSwitchToSubstantialCharSetFromSubstantialCharSet(
+            SubstantialCharSet aSubstantialCharSet){
+        return null;
+    }
+
 }

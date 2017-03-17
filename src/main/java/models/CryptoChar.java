@@ -5,8 +5,8 @@ package models;
  */
 public interface CryptoChar {
 
-    String getEncoded();
+    String encode();
 
-    Character getDecoded();
+    Character decode();
 
 }

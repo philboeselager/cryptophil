@@ -39,20 +39,24 @@ public class SubstantialCharSet implements CharSet{
     public void addChar(Character aChar){
         SubstantialChar sc = new SubstantialChar(aChar, mEncodedLength, mEncodedFactory);
         mEncodingCharSet.put(aChar, sc);
-        mDecodingCharSet.put(sc.getEncoded(), sc);
+        mDecodingCharSet.put(sc.encode(), sc);
     }
 
     @Override
     public String getEncoded(Character aChar){
-        return mEncodingCharSet.get(aChar).getEncoded();
+        return mEncodingCharSet.get(aChar).encode();
     }
 
     @Override
     public Character getDecoded(String aEncoded){
-        return mDecodingCharSet.get(aEncoded).getDecoded();
+        return mDecodingCharSet.get(aEncoded).decode();
     }
 
     public short getEncodedLength() {
         return mEncodedLength;
+    }
+
+    public Set<Map.Entry<Character, SubstantialChar>> getAllEncoded(){
+        return Collections.unmodifiableSet(mEncodingCharSet.entrySet());
     }
 }
